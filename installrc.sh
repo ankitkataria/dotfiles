@@ -1,5 +1,6 @@
+#!/bin/bash
 echo ".cfg">> $HOME/.gitignore
-git clone git@github.com:ankitkataria/dotfiles.git $HOME/.cfg
+git clone --bare git@github.com:ankitkataria/dotfiles.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir="$HOME/.cfg" --work-tree=$HOME'
 # the -p flag gives no error if the dir already exists
 mkdir -p $HOME/.cfg-backup
