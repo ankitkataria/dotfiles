@@ -1,0 +1,16 @@
+#!/bin/bash
+#script to change to harddrive and assosciated function
+
+
+
+ #if [ "$(id -u)" != "0" ]; then 
+#	echo "you need to be super-user to execute tht command"
+#else
+	cd /mnt/4ED81E30D81E16B5 
+	if [ $# != "0" ];then 
+		cd /mnt/4ED81E30D81E16B5/$1
+		ls 
+	else 
+		ls 
+	fi	
+#fi		
