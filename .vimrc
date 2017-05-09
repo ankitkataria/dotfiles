@@ -444,18 +444,25 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 "nerd tree config
-autocmd vimenter * NERDTree
-autocmd StdinReadPre * let s:std_in=1
+autocmd vimenter * NERDTree autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
+let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+"to change the color of the fold column
+autocmd Colorscheme * highlight FoldColumn guifg=bg guibg=bg
 
 
+"for the color schems
+syntax on 
+colorscheme ron
+set foldcolumn=2
+highlight FoldColumn term=bold cterm=NONE ctermfg=none ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-
-
-
-
+"to add powerline functionality
+set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
