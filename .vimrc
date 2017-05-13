@@ -47,6 +47,7 @@
 set history=500
 
 " Enable filetype plugins
+filetype on
 filetype plugin on
 filetype indent on
 
@@ -236,8 +237,8 @@ map <leader>bd :Bclose<cr>:tabclose<cr>gT
 " Close all the buffers
 map <leader>ba :bufdo bd<cr>
 
-map <leader>l :bnext<cr>
-map <leader>h :bprevious<cr>
+map <leader>f :bnext<cr>
+"map <leader>a :bprevious<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -466,3 +467,13 @@ highlight FoldColumn term=bold cterm=NONE ctermfg=none ctermbg=NONE gui=NONE gui
 set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
+"for close tag functionality
+"filenames like *.xml, *.html, *.xhtml, ...
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.blade.php"
+
+"for indentation
+set autoindent 
+set cindent 
+set tabstop=4 
+set shiftwidth=2 
+set expandtab

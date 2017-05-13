@@ -120,3 +120,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/home/ankit/.rvm/gems/ruby-2.4.1/bin"
 alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
 export TERM=”screen-256color”
+
+#to map caps lock key to control.
+setxkbmap -option ctrl:nocaps
+
