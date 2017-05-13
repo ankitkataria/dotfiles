@@ -463,10 +463,6 @@ colorscheme ron
 set foldcolumn=2
 highlight FoldColumn term=bold cterm=NONE ctermfg=none ctermbg=NONE gui=NONE guifg=NONE guibg=NONE
 
-"to add powerline functionality
-set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
-set laststatus=2
-set t_Co=256
 "for close tag functionality
 "filenames like *.xml, *.html, *.xhtml, ...
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.php,*.blade.php"
