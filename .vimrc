@@ -473,3 +473,12 @@ set cindent
 set tabstop=4 
 set shiftwidth=2 
 set expandtab
+"for status to come always
+set laststatus=2
+"to add powerline fonts
+let g:airline_powerline_fonts = 1
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"Always show statusline
+set laststatus=2
+"Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256"
