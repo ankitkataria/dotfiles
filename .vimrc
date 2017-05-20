@@ -432,8 +432,9 @@ endfunction
 "   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "endif
 
-
-"my code
+""""""""""""""""""""""
+" MY CODE 
+""""""""""""""""""""""
 
 execute pathogen#infect()
 
@@ -457,7 +458,7 @@ let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
 autocmd Colorscheme * highlight FoldColumn guifg=bg guibg=bg
 
 
-"for the color schems
+"for the color schema
 syntax on 
 colorscheme ron
 set foldcolumn=2
