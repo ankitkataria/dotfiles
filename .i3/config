@@ -180,10 +180,15 @@ bindsym Control+$modalt+l exec --no-startup-id "i3lock -c 000000 -n -p default -
 #setting the wallpaper
 exec --no-startup-id feh --bg-scale ~/Downloads/wallpaper.jpg
 # to start red shift at startup and shorcut to close
-exec --no-startup-id redshift -t 4700:4700 -l 29.87:77.88
+exec --no-startup-id redshift -t 3700:3700 -l 29.87:77.88
 bindsym $mod+Shift+u exec pkill -USR1 redshift
 #to configure external display script in ./bin/monitor
 bindsym $mod+Shift+s exec --no-startup-id /home/ankit/bin/monitor
 # Move focused workspace to monitor
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
+# Print screen
+bindsym Print exec "escrotum ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
+bindsym Shift+Print exec "escrotum --select ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
+bindsym Ctrl+Print exec "escrotum  --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
+bindsym $mod+Print exec "escrotum --select --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
