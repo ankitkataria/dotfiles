@@ -116,3 +116,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:/home/ankit/.rvm/gems/ruby-2.4.1/bin"
 alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
 
+# for virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+source /usr/local/bin/virtualenvwrapper.sh
