@@ -117,4 +117,15 @@ if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline
   source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
+# scm breeze
 [ -s "/home/ankit/.scm_breeze/scm_breeze.sh" ] && source "/home/ankit/.scm_breeze/scm_breeze.sh"
+
+# for using dir_colors in tab completion
+
+eval `dircolors ~/.dircolors`
+
+zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+autoload -Uz compinit
+compinit
+
+

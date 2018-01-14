@@ -1,14 +1,15 @@
 #!/bin/bash
+
 #script to change to harddrive and assosciated function
 
-
+directory="/mnt/4C2A54AF2A549832"
 
  #if [ "$(id -u)" != "0" ]; then 
 #	echo "you need to be super-user to execute tht command"
 #else
-	cd /mnt/4ED81E30D81E16B5 
+	cd "$directory" 
 	if [ $# != "0" ];then 
-		cd /mnt/4ED81E30D81E16B5/$1
+		cd "$directory"/$1
 		ls 
 	else 
 		ls 

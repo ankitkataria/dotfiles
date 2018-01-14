@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# script to manage multiple monitors using xrandr, use arandr for gui
+
 EXTERNAL_OUTPUT="HDMI1"
 INTERNAL_OUTPUT="LVDS1"
 
