@@ -1,0 +1,25 @@
+[global_config]
+  title_inactive_bg_color = "#100809"
+  title_inactive_fg_color = "#ffffff"
+  title_receive_bg_color = "#100809"
+  title_transmit_bg_color = "#100809"
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_darkness = 0.92
+    background_image = None
+    background_type = transparent
+    font = Inconsolata for Powerline Medium 12
+    foreground_color = "#ffffff"
+    icon_bell = False
+    use_system_font = False
