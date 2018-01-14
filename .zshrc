@@ -89,19 +89,9 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias sag='sudo apt-get'
 alias saar='sudo add-apt-repository'
-alias ciao='sudo poweroff'
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias go='git checkout '
-alias gk='gitk --all&'
-alias gx='gitx --all'
-alias got='git '
-alias get='git '
-alias gh='xdg-open'
 alias md=". mydisk"
+alias go="xdg-open"
+alias yt-dl='youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --metadata-from-title "%(artist)s - %(title)s" --add-metadata'
 
 #for nodejs server
 export PATH=$PATH:/usr/local/nodejs/bin
@@ -120,3 +110,11 @@ alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
 source /usr/local/bin/virtualenvwrapper.sh
+
+# for powerline
+
+if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+  source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
+[ -s "/home/ankit/.scm_breeze/scm_breeze.sh" ] && source "/home/ankit/.scm_breeze/scm_breeze.sh"
