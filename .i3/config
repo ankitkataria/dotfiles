@@ -140,13 +140,15 @@ mode "resize" {
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
-        bindsym Return mode "default"
+       bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-#custom config
+##############
+#   CUSTOM   #
+##############   
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -160,33 +162,33 @@ bar {
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 # Pulse Audio controls
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
-#mute ndsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
-#bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master 5%+" 
+bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master 5%-" 
+bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse sset Master toggle"
 
 #to run nm-applet at startup
-#exec --no-startup-id "nm-applet"
 exec --no-startup-id nm-applet
 
 #configuring xautolock
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
+
 #making shortcut to lock screen
 bindsym Control+$modalt+l exec --no-startup-id "i3lock -c 000000 -n -p default -u"
-#setting up wallaper
+
 #setting the wallpaper
-exec --no-startup-id feh --bg-scale ~/Downloads/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/maxresdefault.jpg
+
 # to start red shift at startup and shorcut to close
 exec --no-startup-id redshift -t 3700:3700 -l 29.87:77.88
 bindsym $mod+Shift+u exec pkill -USR1 redshift
+
 #to configure external display script in ./bin/monitor
 bindsym $mod+Shift+s exec --no-startup-id /home/ankit/bin/monitor
+
 # Move focused workspace to monitor
 bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
+
 # Print screen
 bindsym Print exec "escrotum ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
 bindsym Shift+Print exec "escrotum --select ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
