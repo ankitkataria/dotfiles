@@ -51,7 +51,7 @@ ZSH_THEME="Soliah"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-256color)
+plugins=(git zsh-256color vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -103,7 +103,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:/home/ankit/.rvm/gems/ruby-2.4.1/bin"
+# export PATH="$PATH:/home/ankit/.rvm/gems/ruby-2.4.1/bin"
 alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
 
 # for virtualenvwrapper
@@ -128,4 +128,4 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
 
-
+source ~/.rvm/scripts/rvm
