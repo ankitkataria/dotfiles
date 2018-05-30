@@ -55,9 +55,15 @@ git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
+virtual_env() {
+  if [ $VIRTUAL_ENV ]; then
+    echo "($(basename $VIRTUAL_ENV))"
+  fi
+}
+
 # Soliah ZSH PS1 cloned
 function cool_prompt {
-export PS1="${BLUE}\u ${NOCOLOR}on ${RED}\h ${NOCOLOR}in ${BLUE}\w ${NOCOLOR}\$(git_branch)\n\$ ${NOCOLOR}" 
+  export PS1="$(virtual_env)${BLUE}\u ${NOCOLOR}on ${RED}\h ${NOCOLOR}in ${BLUE}\w ${NOCOLOR}\$(git_branch)\n\$ ${NOCOLOR}" 
 }
 
 PROMPT_COMMAND=cool_prompt
