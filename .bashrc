@@ -76,3 +76,29 @@ source /usr/local/bin/virtualenvwrapper.sh
 # For handling bare git repo for dotfiles
 alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
 
+# fzf for fuzzy history search
+
+# bash history 
+
+# to append history rather than truncating it
+shopt -s histappend
+
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+
+# ignoring commands that start with space or are duplicates
+HISTCONTROL=ignoreboth:erasedups
+
+HISTIGNORE='ls:bg:fg:history'
+
+# storing multi line commands in a single line
+shopt -s cmdhist
+
+# storing bash history after every command
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+# half typed reverse searches
+
+# aliases
+alias yt-dl='youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --metadata-from-title "%(artist)s - %(title)s" --add-metadata'
+
