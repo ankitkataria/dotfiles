@@ -16,13 +16,18 @@ Plugin 'vim-airline/vim-airline'
 
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'morhetz/gruvbox'
-
 Plugin 'sheerun/vim-polyglot'
 
 Plugin 'townk/vim-autoclose'
 
 Plugin 'editorconfig/editorconfig-vim'
+
+Plugin 'dikiaap/minimalist'
+
+Plugin 'AlessandroYorba/Sierra'
+
+" to match airline theme with the tmux line
+Plugin 'edkolev/tmuxline.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -46,7 +51,7 @@ let g:ctrlp_custom_ignore = {
 """""""""""""
 
 " theme
-let g:airline_theme='raven'
+let g:airline_theme='minimalist'
 
 " enabling powerline symbols
 let g:airline_powerline_fonts = 1
@@ -57,6 +62,14 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""
 """""" Genral Config 
 """"""""""""""""""""""""""
+
+" theme related
+let g:sierra_Midnight = 1
+"let g:sierra_Sunset = 1
+"let g:sierra_Twilight = 1
+"let g:sierra_Pitch = 1
+
+colorscheme sierra 
 
 " setting the leader key
 let mapleader = ","
@@ -88,13 +101,13 @@ set tabstop=4       " number of visual spaces per TAB
 set softtabstop=4   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
-"set number              " show line numbers
-"set ruler
-"set relativenumber
+set number              " show line numbers
+set ruler
+set relativenumber
 set laststatus=2
 
 set showcmd             " show command in bottom bar
-"set cursorline          " highlight current line
+set cursorline          " highlight current line
 
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
