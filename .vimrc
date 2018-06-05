@@ -26,8 +26,15 @@ Plugin 'dikiaap/minimalist'
 
 Plugin 'AlessandroYorba/Sierra'
 
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'airblade/vim-gitgutter'
+
 " to match airline theme with the tmux line
 Plugin 'edkolev/tmuxline.vim'
+
+" to wipeout all buffers that aren't open anywhere
+Plugin 'artnez/vim-wipeout'
 
 call vundle#end()
 filetype plugin indent on
@@ -35,6 +42,19 @@ filetype plugin indent on
 """"""""""""""""""""""""""
 """""" Plugin Config
 """"""""""""""""""""""""""
+
+" Nerd Tree
+"""""""""""
+
+" opening nerd tree when no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+map <C-n> :NERDTreeToggle<CR>
+
+" close vim if nerdtree is the last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 " Ctrlp
 """""""
@@ -64,10 +84,10 @@ let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""
 
 " theme related
-let g:sierra_Midnight = 1
+"let g:sierra_Midnight = 1
 "let g:sierra_Sunset = 1
 "let g:sierra_Twilight = 1
-"let g:sierra_Pitch = 1
+let g:sierra_Pitch = 1
 
 colorscheme sierra 
 
@@ -77,6 +97,12 @@ let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
+
+" Fast save and quit
+nmap <leader>wq :wq<cr>
+
+" Fast quit without saving
+nmap <leader>q :q!<cr>
 
 " saving with escalated priveleges
 "command W w !sudo tee % > /dev/null
@@ -112,7 +138,6 @@ set cursorline          " highlight current line
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
 
-
 "searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -129,3 +154,17 @@ nnoremap <leader><space> :nohlsearch<CR>
 
 " Set to autoread when a file is changed from outside
 set autoread
+
+" Buffer and window related key binding
+
+" for cycling through tabs and creating a new one
+nnoremap gn :tabn<CR>
+nnoremap gp :tabp<CR>
+nnoremap <C-t> :tabnew<CR>
+nnoremap tt :tab split<CR>
+
+" moving in between splits, open buffers in splits don't cycle buffers
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l

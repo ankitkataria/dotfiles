@@ -31,13 +31,14 @@ xterm*rightScrollBar:     true
 xterm*jumpScroll:         true
 xterm*multiScroll:        true
 
+
 URxvt.lineSpace: 1
 URxvt.font: xft:Inconsolata:size=10.5,xft:Inconsolata\ for\ Powerline:size=10
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.transparent: true
+! URxvt.transparent: true
 URxvt.shading: 15
 URxvt.perl-ext-common: resize-font
 
