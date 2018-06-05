@@ -15,14 +15,13 @@ alias config='/usr/bin/git --git-dir="$HOME/.cfg" --work-tree=$HOME'
 - [i3](./.i3)
 - [tmux](./.tmux.conf)
 - uses [green.theme](https://github.com/cmus/cmus/blob/master/data/green.theme) for cmus
-- uses [Soliah](https://github.com/robbyrussell/oh-my-zsh/blob/master/themes/Soliah.zsh-theme) for [zsh](./.zshrc) 
 - [dircolors](./.dircolors)
-- [terminator](./.config/terminator/config)
 - miscellaneous scripts for managing [multiple monitors](./bin/monitor) and [battery status](./bin/battstatus.sh) in i3
+- [i3-block](https://github.com/vivien/i3blocks)
 
 ### Screenshots
 
-![Terminal](./screenshots/terminal.png?raw=true "Terminal, CMus and i3")
+![Terminal](./screenshots/terminalnew.png?raw=true "Terminal, CMus and i3")
 
 ### Resources 
 
