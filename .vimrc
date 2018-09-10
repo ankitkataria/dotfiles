@@ -18,7 +18,7 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'sheerun/vim-polyglot'
 
-Plugin 'townk/vim-autoclose'
+" Plugin 'townk/vim-autoclose'
 
 Plugin 'editorconfig/editorconfig-vim'
 
@@ -30,11 +30,20 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'airblade/vim-gitgutter'
 
+" plugin for auto tab completion need
+Plugin 'jiangmiao/auto-pairs'
+
+" for autocompletion needs
+Plugin 'ervandew/supertab'
+
 " to match airline theme with the tmux line
 Plugin 'edkolev/tmuxline.vim'
 
 " to wipeout all buffers that aren't open anywhere
 Plugin 'artnez/vim-wipeout'
+
+" handy commenting
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 filetype plugin indent on
@@ -43,12 +52,31 @@ filetype plugin indent on
 """""" Plugin Config
 """"""""""""""""""""""""""
 
+" Git Gutter
+""""""""""""
+
+set updatetime=100
+
+" setting timeout to switch in between modes
+set ttimeoutlen=10
+
+" Nerd Commenter
+"""""""""""""""
+" adds spaces after comments
+let g:NERDSpaceDelims = 1
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
 " Nerd Tree
 """""""""""
 
 " opening nerd tree when no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd Stdinreadpre * let s:std_in=1
+autocmd vimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -98,6 +126,9 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" to delete the buffers
+nmap <leader>d :Wipeout<cr>
+
 " Fast save and quit
 nmap <leader>wq :wq<cr>
 
@@ -123,8 +154,14 @@ set nuw=4
 " above and below the cursor
 set scrolloff=10
 
-set tabstop=4       " number of visual spaces per TAB
-set softtabstop=4   " number of spaces in tab when editing
+" to enable mouse scroll
+set mouse=a
+
+set autoindent
+set smartindent
+set cindent
+set tabstop=2       " number of visual spaces per TAB
+set softtabstop=2   " number of spaces in tab when editing
 set expandtab       " tabs are spaces
 
 set number              " show line numbers
@@ -149,8 +186,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 " // at the end of the directory will store the files using full paths so 
 " file with same names in different directories do not conflict with each
 " other.
-"set directory=~/.vim/.swap//
-"set backupdir=~/.vim/.backup//
+set directory=~/.vim/.swap//
+set backupdir=~/.vim/.backup//
 
 " Set to autoread when a file is changed from outside
 set autoread

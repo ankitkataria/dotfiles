@@ -33,7 +33,7 @@ xterm*multiScroll:        true
 
 
 URxvt.lineSpace: 1
-URxvt.font: xft:Inconsolata:size=10.5,xft:Inconsolata\ for\ Powerline:size=10
+URxvt.font: xft:Inconsolata:size=10,xft:Inconsolata\ for\ Powerline:size=10
 URxvt.letterSpace: -1
 URxvt.scrollBar: false
 URxvt.iso14755: false

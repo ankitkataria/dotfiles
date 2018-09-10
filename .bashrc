@@ -75,6 +75,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # For handling bare git repo for dotfiles
 alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
+alias dbundle='/home/ankit/opensource/bundler/bin/bundle'
 
 # fzf for fuzzy history search
 
@@ -101,4 +102,14 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 # aliases
 alias yt-dl='youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" --metadata-from-title "%(artist)s - %(title)s" --add-metadata'
+
+# Improving TAB completion 
+
+bind 'TAB':menu-complete
+
+# Display a list of the matching files if ambiguous
+bind "set show-all-if-ambiguous on"
+
+# only start cycling full results on the second Tab press
+bind "set menu-complete-display-prefix on"
 
