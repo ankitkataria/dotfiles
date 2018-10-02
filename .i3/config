@@ -196,7 +196,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 
 #making shortcut to lock screen
-bindsym Control+$modalt+l exec --no-startup-id "i3lock -c 000000 -n -p default -u"
+bindsym Control+$modalt+l exec --no-startup-id "i3lock -c 000000 -n -p default"
 
 #setting the wallpaper
 exec --no-startup-id feh --bg-scale ~/Pictures/maxresdefault.jpg
