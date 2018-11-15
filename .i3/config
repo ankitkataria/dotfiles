@@ -199,7 +199,9 @@ exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
 bindsym Control+$modalt+l exec --no-startup-id "i3lock -c 000000 -n -p default"
 
 #setting the wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/maxresdefault.jpg
+# exec --no-startup-id feh --bg-scale ~/Pictures/maxresdefault.jpg
+# for setting up random wallpapers
+exec --no-startup-id feh --randomize --bg-scale /home/ankit/Pictures/minimalist 
 
 # to start red shift at startup and shorcut to close
 exec --no-startup-id redshift -t 3700:3700 -l 29.87:77.88
