@@ -185,9 +185,14 @@ client.urgent           #900000 #900000 #ffffff #2b2b2b
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master 5%+" 
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master 5%-" 
-bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse sset Master toggle"
+# bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master 5%+"
+# bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master 5%-"
+# bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse sset Master toggle"
+
+# Pulse Audio controls with i3block
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
 
 #to run nm-applet at startup
 exec --no-startup-id nm-applet
