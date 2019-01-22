@@ -20,7 +20,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Adds NodeJS path
-export PATH=$PATH:/usr/local/nodejs/bin
+# export PATH=$PATH:/usr/local/nodejs/bin
 
 # Adds NVM path
 export NVM_DIR="$HOME/.nvm"
@@ -30,7 +30,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin"
 
 # SCM Breeze
-[ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
+# [ -s "$HOME/.scm_breeze/scm_breeze.sh" ] && source "$HOME/.scm_breeze/scm_breeze.sh"
 
 # Colorized Prompt
 BLACK="\[\033[0;30m\]"
@@ -71,11 +71,11 @@ PROMPT_COMMAND=cool_prompt
 # For Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # For handling bare git repo for dotfiles
-alias config='/usr/bin/git --git-dir=/home/ankit/.cfg/ --work-tree=/home/ankit'
-alias dbundle='/home/ankit/opensource/bundler/bin/bundle'
+alias config='/usr/bin/git --git-dir=/home/kataria/.cfg/ --work-tree=/home/kataria'
+alias dbundle='/home/kataria/work/opensource/bundler/bin/bundle'
 
 # fzf for fuzzy history search
 
@@ -113,3 +113,6 @@ bind "set show-all-if-ambiguous on"
 # only start cycling full results on the second Tab press
 bind "set menu-complete-display-prefix on"
 
+[ -s "/home/kataria/.scm_breeze/scm_breeze.sh" ] && source "/home/kataria/.scm_breeze/scm_breeze.sh"
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

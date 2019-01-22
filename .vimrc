@@ -186,8 +186,8 @@ nnoremap <leader><space> :nohlsearch<CR>
 " // at the end of the directory will store the files using full paths so 
 " file with same names in different directories do not conflict with each
 " other.
-set directory=~/.vim/.swap//
-set backupdir=~/.vim/.backup//
+" set directory=~/.vim/.swap//
+" set backupdir=~/.vim/.backup//
 
 " Set to autoread when a file is changed from outside
 set autoread
