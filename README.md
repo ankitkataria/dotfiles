@@ -21,7 +21,7 @@ alias config='/usr/bin/git --git-dir="$HOME/.cfg" --work-tree=$HOME'
 
 ### Screenshots
 
-![Terminal](./screenshots/terminalnew.png?raw=true "Terminal, CMus and i3")
+![Terminal](./screenshots/terminalarch.png?raw=true "Terminal, CMus and i3")
 
 ### Resources 
 
