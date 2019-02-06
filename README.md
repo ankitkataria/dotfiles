@@ -18,6 +18,8 @@ alias config='/usr/bin/git --git-dir="$HOME/.cfg" --work-tree=$HOME'
 - [dircolors](./.dircolors)
 - miscellaneous scripts for managing [multiple monitors](./bin/monitor) and [battery status](./bin/battstatus.sh) in i3
 - [i3-block](https://github.com/vivien/i3blocks)
+- [rofi](https://github.com/DaveDavenport/rofi)
+    - [rofi-themes](https://github.com/DaveDavenport/rofi-themes)
 
 ### Screenshots
 
