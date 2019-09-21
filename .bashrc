@@ -5,7 +5,7 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias md=". mydisk"
-alias ll="ls -alh"
+alias ll="ls -alh" 
 
 export EDITOR="vim"
 export SVN_EDITOR="vim"
@@ -71,7 +71,7 @@ PROMPT_COMMAND=cool_prompt
 # For Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects
-# source /usr/local/bin/virtualenvwrapper.sh
+source /usr/bin/virtualenvwrapper.sh
 
 # For handling bare git repo for dotfiles
 alias config='/usr/bin/git --git-dir=/home/kataria/.cfg/ --work-tree=/home/kataria'
@@ -116,3 +116,13 @@ bind "set menu-complete-display-prefix on"
 [ -s "/home/kataria/.scm_breeze/scm_breeze.sh" ] && source "/home/kataria/.scm_breeze/scm_breeze.sh"
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Jupyterlab and OpenCV installation 
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/lib/pkgconfig
+export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+
+# work specific aliases 
+alias circuitverse="cd $HOME/work/opensource/CircuitVerse"
+
+# to get double tapping to work in arch linux
+synclient TapButton1=1 && synclient TapButton2=3

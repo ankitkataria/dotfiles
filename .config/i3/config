@@ -166,7 +166,7 @@ bar {
   position top
   # separator_symbol "|"
   font pango:Roboto for Powerline 8 
-  status_command i3blocks -c ~/.i3blocks.conf
+  status_command SCRIPT_DIR=~/.config/i3blocks i3blocks -c ~/.i3blocks.conf
   colors {
     separator #268bd2
 #    background #002b36
@@ -189,8 +189,8 @@ client.urgent           #900000 #900000 #ffffff #2b2b2b
 exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
 # To enable single and double taps
-exec --no-startup-id synclient TapButton1=1
-exec --no-startup-id synclient TapButton2=3
+exec-always --no-startup-id synclient TapButton1=1
+exec-always --no-startup-id synclient TapButton2=3
 
 # Pulse Audio controls
 # bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master 5%+"
@@ -206,7 +206,7 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 #exec --no-startup-id nm-applet
 
 #configuring xautolock
-exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000'
+exec --no-startup-id xautolock -time 10 -locker 'i3lock -d -c 000000' -corners 0-00
 
 #making shortcut to lock screen
 bindsym Control+$modalt+l exec --no-startup-id "i3lock -c 000000 -n -p default"
@@ -228,11 +228,11 @@ bindsym $mod+Shift+bracketleft move workspace to output left
 bindsym $mod+Shift+bracketright move workspace to output right
 
 # Alt tab shortcut
-bindsym $modalt+Tab focus right
-bindsym $modalt+Shift+Tab focus left
+bindsym $mod+Tab focus right
+bindsym $mod+Shift+Tab focus left
 
 # Print screen
 bindsym Print exec "escrotum ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
 bindsym Shift+Print exec "escrotum --select ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
 bindsym Ctrl+Print exec "escrotum  --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
-bindsym $mod+Print exec "escrotum --select --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
+bindsym $mod+Ctrl+Shift+4 exec "escrotum --select --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
