@@ -236,3 +236,10 @@ bindsym Print exec "escrotum ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
 bindsym Shift+Print exec "escrotum --select ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
 bindsym Ctrl+Print exec "escrotum  --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
 bindsym $mod+Ctrl+Shift+4 exec "escrotum --select --clipboard ~/Desktop/Screenshots/%Y-%m-%d_%H-%M-%S-$wx$h.png"
+
+# Polkit agent
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Thunar daemon
+
+exec --no-startup-id thunar --daemon
