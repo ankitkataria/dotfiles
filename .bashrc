@@ -126,3 +126,7 @@ alias circuitverse="cd $HOME/work/opensource/CircuitVerse"
 
 # to get double tapping to work in arch linux
 synclient TapButton1=1 && synclient TapButton2=3
+
+# exporting go binary path
+ export PATH="$PATH:$HOME/go/bin"
+
